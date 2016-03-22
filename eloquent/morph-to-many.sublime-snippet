@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+/**
+ * ${TM_FILEPATH/^.+\/(\w+)\.php$/${1}/} morphs to many (many-to-many) ${1/^((.+)ies)|(.+[^s])s$/\u(?1$2y:$3)/}
+ * @link https://laravel.com/docs/eloquent-relationships#many-to-many-polymorphic-relations
+ *
+ * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
+ */
+public function $1()
+{
+	// morphToMany(RelatedModel, morphName, pivotTable = ${2/.*/$0s/}, thisKeyOnPivot = ${2/.*/$0/}_id, otherKeyOnPivot = ${1/^((.+)ies)|(.+[^s])s$/\l(?1$2y:$3)/}_id)
+	return \$this->morphToMany(${1/^((.+)ies)|(.+[^s])s$/\u(?1$2y:$3)/}::class, '${2:${1/^((.+)ies)|(.+[^s])s$/\l(?1$2y:$3)/}able}'$4)$5;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>morphToMany</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+	<description>Eloquent M-M (owner) polymorphic relation</description>
+</snippet>

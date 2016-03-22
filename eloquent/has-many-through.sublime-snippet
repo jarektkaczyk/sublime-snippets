@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+/**
+ * ${TM_FILEPATH/^.+\/(\w+)\.php$/${1}/} has many ${1/^((.+ies))|(.+[^s]s)$/\u(?1$2y:$3)/} through ${2/^((.+)y)|(.+)$/\u(?1$2y:$3s)/}
+ * Works for 1-1/1-m through 1-1/1-m
+ * @link https://laravel.com/docs/eloquent-relationships#has-many-through
+ *
+ * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
+ */
+public function $1()
+{
+	// hasManyThrough(FarModel, closeModel, keyOnCloseModel = ${TM_FILEPATH/^.+\/(\w+)\.php$/\l${1}/}_id, keyOnFarModel = ${2/.*/\l$0/}_id)
+	return \$this->hasManyThrough(${1/^((.+)ies)|(.+[^s])s$/\u(?1$2y:$3)/}::class, ${2:through}::class$3)$5;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>hmt</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+	<description>Eloquent hasManyThrough() relation</description>
+</snippet>

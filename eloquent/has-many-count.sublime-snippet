@@ -1,0 +1,37 @@
+<snippet>
+	<content><![CDATA[
+/**
+ * ${TM_FILEPATH/^.+\/(\w+)\.php$/${1}/} has many ${1/.*/\u$0/} count.
+ *
+ * @return \Illuminate\Database\Eloquent\Relations\HasOne
+ */
+public function $1Count()
+{
+	// hasOne(RelatedModel, foreignKeyOnRelatedModel = ${TM_FILEPATH/^.+\/(\w+)\.php$/\l${1}/}_id, localKey = id)
+	return \$this->hasOne(${1/^((.+)ies)|(.+[^s])s$/\u(?1$2y:$3)/}::class, '${2:${TM_FILEPATH/^.+\/(\w+)\.php$/\l${1}/}_id}')
+		->selectRaw('count(*) as aggregate, $2')
+		->groupBy('$2')$5;
+}
+
+/**
+ * Convenient accessor for the $1Count relation.
+ *
+ * @return int
+ */
+public function get${1/.*/\u$0/}CountAttribute()
+{
+	if (!\$this->relationLoaded('$1Count')) {
+		\$this->load('$1Count');
+	}
+
+	\$relation = \$this->getRelation('$1Count');
+
+	return (\$relation) ? (int) \$relation->aggregate : 0;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>hmc</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+	<description>Eloquent hasMany count helper relation</description>
+</snippet>

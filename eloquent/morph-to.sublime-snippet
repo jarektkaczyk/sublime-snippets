@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+/**
+ * ${TM_FILEPATH/^.+\/(\w+)\.php$/${1}/} morphs to models in ${1/.*/$0/}_type
+ * @link https://laravel.com/docs/eloquent-relationships#polymorphic-relations
+ *
+ * @return \Illuminate\Database\Eloquent\Relations\MorphTo
+ */
+public function $1()
+{
+	// morphTo(\$name = ${1/.*/$0/}, \$type = ${1/.*/$0/}_type, \$id = ${1/.*/$0/}_id)
+	// requires ${1/.*/$0/}_type and ${1/.*/$0/}_id fields on \$this->table
+	return \$this->morphTo($4)$5;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>morphTo</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+	<description>Eloquent 1-M (child) polymorphic relation</description>
+</snippet>

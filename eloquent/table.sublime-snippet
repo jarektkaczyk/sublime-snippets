@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+/**
+ * The database table used by the model.
+ *
+ * @var string
+ */
+protected \$table = '${1:${TM_FILEPATH/^.+\/(\w+)\.php$/\l${1}s/}}';
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>table</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+	<description>Eloquent model table name</description>
+</snippet>

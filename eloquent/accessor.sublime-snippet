@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+/**
+ * Accessor for $1 attribute
+ * @link https://laravel.com/docs/eloquent-mutators#accessors-and-mutators
+ *
+ * @return ${3:returnType}
+ */
+public function get${1/.+/\u$0/}Attribute(\$value)
+{
+	return ${2:\$value};
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>accessor</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+	<description>Eloquent attribute accessor</description>
+</snippet>

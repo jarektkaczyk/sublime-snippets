@@ -1,0 +1,26 @@
+<snippet>
+    <content><![CDATA[
+/**
+ * The "booting" method of the model.
+ *
+ * @return void
+ */
+protected static function boot()
+{
+    parent::boot();
+
+    // observable events:
+    // creating, created, updating, updated, deleting,
+    // deleted, saving, saved, restoring, restored
+    // @link https://laravel.com/docs/eloquent#events
+    static::${1:event}(function (\$model) {
+        ${2:// do something with the model, return false to halt}
+    });
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>eloquent-listener</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.php</scope>
+    <description>Eloquent model event listener</description>
+</snippet>

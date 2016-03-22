@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+/**
+ * Query scope $1
+ * @link https://laravel.com/docs/eloquent#local-scopes
+ *
+ * @param  \Illuminate\Database\Eloquent\Builder
+ * @return \Illuminate\Database\Eloquent\Builder
+ */
+public function scope${1/.+/\u$0/}(\$query$2)
+{
+	return \$query->$3;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>scope</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+	<description>Eloquent query scope</description>
+</snippet>

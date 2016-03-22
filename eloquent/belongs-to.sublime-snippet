@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+/**
+ * ${TM_FILEPATH/^.+\/(\w+)\.php$/${1}/} belongs to ${1/(.)*/\u$0/}
+ * @link https://laravel.com/docs/eloquent-relationships#one-to-one
+ *
+ * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+ */
+public function $1()
+{
+	// belongsTo(RelatedModel, foreignKey = ${1/(.)*/\l$0/}_id, keyOnRelatedModel = id)
+	return \$this->belongsTo(${1/(.)*/\u$0/}::class$3)$4;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>belongsTo</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+	<description>Eloquent belongsTo() relation</description>
+</snippet>

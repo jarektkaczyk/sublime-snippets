@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+/**
+ * ${TM_FILEPATH/^.+\/(\w+)\.php$/${1}/} belongs to many (many-to-many) ${1/^((.+)ies)|(.+[^s])s$/\u(?1$2y:$3)/}
+ * @link https://laravel.com/docs/eloquent-relationships#many-to-many
+ *
+ * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+ */
+public function $1()
+{
+	// belongsToMany(RelatedModel, pivotTable, thisKeyOnPivot = ${TM_FILEPATH/^.+\/(\w+)\.php$/\l${1}/}_id, otherKeyOnPivot = ${1/^((.+)ies)|(.+[^s])s$/\l(?1$2y:$3)/}_id)
+	return \$this->belongsToMany(${1/^((.+)ies)|(.+[^s])s$/\u(?1$2y:$3)/}::class$2)$3;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>btm</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+	<description>Eloquent belongsToMany() (pivot) relation</description>
+</snippet>

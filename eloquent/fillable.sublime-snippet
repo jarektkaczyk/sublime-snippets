@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+/**
+ * Fields that can be mass assigned
+ * @link https://laravel.com/docs/eloquent#mass-assignment
+ *
+ * @var string[]
+ */
+protected \$fillable = [$1];
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>fillable</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+	<description>Eloquent mass assignement whitelist</description>
+</snippet>
