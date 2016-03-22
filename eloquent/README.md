@@ -3,4 +3,4 @@
 https://laravel.com/docs/eloquent
 
 
-![snippet example](eloquent-snippet.gif)
+![snippet example](eloquent-snippets.gif)
